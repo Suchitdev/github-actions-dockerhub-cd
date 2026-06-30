@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Production Deployment Center</title>
+
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='style.css') }}">
+
+</head>
+
+<body>
+
+<div class="container">
+
+    <!-- ================= Sidebar ================= -->
+
+    <aside class="sidebar">
+
+        <div class="logo">
+            🚀
+        </div>
+
+        <h2>DevOps</h2>
+
+        <ul>
+
+            <li class="active">🏠 Dashboard</li>
+
+            <li>⚙ Deployment</li>
+
+            <li>🐳 Docker Hub</li>
+
+            <li>☁ AWS EC2</li>
+
+            <li>📊 Monitoring</li>
+
+        </ul>
+
+    </aside>
+
+    <!-- ================= Main ================= -->
+
+    <main>
+
+        <!-- Header -->
+
+        <header class="topbar">
+
+            <div>
+
+                <h1>Production Deployment Center</h1>
+
+                <p>GitHub Actions → Docker Hub → AWS EC2</p>
+
+            </div>
+
+            <div class="live">
+
+                <span class="dot"></span>
+
+                <div>
+
+                    <h3>{{ status }}</h3>
+
+                    <small>{{ current_time }}</small>
+
+                </div>
+
+            </div>
+
+        </header>
+
+        <!-- Pipeline -->
+
+        <section class="pipeline">
+
+            <div class="step">
+
+                <span>👨‍💻</span>
+
+                <h4>Developer</h4>
+
+            </div>
+
+            <div class="line"></div>
+
+            <div class="step">
+
+                <span>📂</span>
+
+                <h4>GitHub</h4>
+
+            </div>
+
+            <div class="line"></div>
+
+            <div class="step">
+
+                <span>⚡</span>
+
+                <h4>Actions</h4>
+
+            </div>
+
+            <div class="line"></div>
+
+            <div class="step">
+
+                <span>🐳</span>
+
+                <h4>Docker Hub</h4>
+
+            </div>
+
+            <div class="line"></div>
+
+            <div class="step">
+
+                <span>☁</span>
+
+                <h4>AWS EC2</h4>
+
+            </div>
+
+        </section>
+
+        <!-- Dashboard -->
+
+        <section class="dashboard">
+
+            <!-- Left -->
+
+            <div class="info">
+
+                <h2>Deployment Details</h2>
+
+                <table>
+
+                    <tr>
+
+                        <td>Status</td>
+
+                        <td>{{ status }}</td>
+
+                    </tr>
+
+                    <tr>
+
+                        <td>Environment</td>
+
+                        <td>{{ environment }}</td>
+
+                    </tr>
+
+                    <tr>
+
+                        <td>Version</td>
+
+                        <td>{{ version }}</td>
+
+                    </tr>
+
+                    <tr>
+
+                        <td>Deployment</td>
+
+                        <td>{{ deployment }}</td>
+
+                    </tr>
+
+                    <tr>
+
+                        <td>Docker Image</td>
+
+                        <td>{{ docker_image }}</td>
+
+                    </tr>
+
+                    <tr>
+
+                        <td>Repository</td>
+
+                        <td>{{ repository }}</td>
+
+                    </tr>
+
+                    <tr>
+
+                        <td>Region</td>
+
+                        <td>{{ region }}</td>
+
+                    </tr>
+
+                    <tr>
+
+                        <td>Hostname</td>
+
+                        <td>{{ hostname }}</td>
+
+                    </tr>
+
+                    <tr>
+
+                        <td>OS</td>
+
+                        <td>{{ os_name }}</td>
+
+                    </tr>
+
+                    <tr>
+
+                        <td>Python</td>
+
+                        <td>{{ python_version }}</td>
+
+                    </tr>
+
+                </table>
+
+            </div>
+
+            <!-- Right -->
+
+            <div class="timeline">
+
+                <h2>Deployment Timeline</h2>
+
+                <ul>
+
+                    <li>✅ Code Pushed</li>
+
+                    <li>✅ GitHub Actions Started</li>
+
+                    <li>✅ Docker Image Built</li>
+
+                    <li>✅ Docker Hub Updated</li>
+
+                    <li>✅ EC2 Pulled Latest Image</li>
+
+                    <li>✅ Container Restarted</li>
+
+                    <li>✅ Deployment Successful</li>
+
+                </ul>
+
+            </div>
+
+        </section>
+
+        <!-- Bottom Cards -->
+
+        <section class="stats">
+
+            <div class="stat">
+
+                <h3>Docker Hub</h3>
+
+                <p>Connected</p>
+
+            </div>
+
+            <div class="stat">
+
+                <h3>GitHub Actions</h3>
+
+                <p>Healthy</p>
+
+            </div>
+
+            <div class="stat">
+
+                <h3>AWS EC2</h3>
+
+                <p>Running</p>
+
+            </div>
+
+            <div class="stat">
+
+                <h3>Deployment</h3>
+
+                <p>Successfull</p>
+
+            </div>
+
+        </section>
+
+    </main>
+
+</div>
+
+</body>
+
+</html>
