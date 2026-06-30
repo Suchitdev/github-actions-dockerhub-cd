@@ -9,292 +9,291 @@
 
     <title>Production Deployment Center</title>
 
-    <link rel="stylesheet"
-          href="{{ url_for('static', filename='style.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
 
 </head>
 
 <body>
 
-<div class="container">
+    <div class="container">
 
-    <!-- ================= Sidebar ================= -->
+        <!-- ================= Sidebar ================= -->
 
-    <aside class="sidebar">
+        <aside class="sidebar">
 
-        <div class="logo">
-            🚀
-        </div>
-
-        <h2>DevOps</h2>
-
-        <ul>
-
-            <li class="active">🏠 Dashboard</li>
-
-            <li>⚙ Deployment</li>
-
-            <li>🐳 Docker Hub</li>
-
-            <li>☁ AWS EC2</li>
-
-            <li>📊 Monitoring</li>
-
-        </ul>
-
-    </aside>
-
-    <!-- ================= Main ================= -->
-
-    <main>
-
-        <!-- Header -->
-
-        <header class="topbar">
-
-            <div>
-
-                <h1>Production Deployment Center</h1>
-
-                <p>GitHub Actions → Docker Hub → AWS EC2</p>
-
+            <div class="logo">
+                🚀
             </div>
 
-            <div class="live">
+            <h2>DevOps</h2>
 
-                <span class="dot"></span>
+            <ul>
+
+                <li class="active">🏠 Dashboard</li>
+
+                <li>⚙ Deployment</li>
+
+                <li>🐳 Docker Hub</li>
+
+                <li>☁ AWS EC2</li>
+
+                <li>📊 Monitoring</li>
+
+            </ul>
+
+        </aside>
+
+        <!-- ================= Main ================= -->
+
+        <main>
+
+            <!-- Header -->
+
+            <header class="topbar">
 
                 <div>
 
-                    <h3>{{ status }}</h3>
+                    <h1>Cloud-Native Deployment Portal</h1>
 
-                    <small>{{ current_time }}</small>
+                    <p>GitHub Actions → Docker Hub → AWS EC2</p>
 
                 </div>
 
-            </div>
+                <div class="live">
 
-        </header>
+                    <span class="dot"></span>
 
-        <!-- Pipeline -->
+                    <div>
 
-        <section class="pipeline">
+                        <h3>{{ status }}</h3>
 
-            <div class="step">
+                        <small>{{ current_time }}</small>
 
-                <span>👨‍💻</span>
+                    </div>
 
-                <h4>Developer</h4>
+                </div>
 
-            </div>
+            </header>
 
-            <div class="line"></div>
+            <!-- Pipeline -->
 
-            <div class="step">
+            <section class="pipeline">
 
-                <span>📂</span>
+                <div class="step">
 
-                <h4>GitHub</h4>
+                    <span>👨‍💻</span>
 
-            </div>
+                    <h4>Developer</h4>
 
-            <div class="line"></div>
+                </div>
 
-            <div class="step">
+                <div class="line"></div>
 
-                <span>⚡</span>
+                <div class="step">
 
-                <h4>Actions</h4>
+                    <span>📂</span>
 
-            </div>
+                    <h4>GitHub</h4>
 
-            <div class="line"></div>
+                </div>
 
-            <div class="step">
+                <div class="line"></div>
 
-                <span>🐳</span>
+                <div class="step">
 
-                <h4>Docker Hub</h4>
+                    <span>⚡</span>
 
-            </div>
+                    <h4>Actions</h4>
 
-            <div class="line"></div>
+                </div>
 
-            <div class="step">
+                <div class="line"></div>
 
-                <span>☁</span>
+                <div class="step">
 
-                <h4>AWS EC2</h4>
+                    <span>🐳</span>
 
-            </div>
+                    <h4>Docker Hub</h4>
 
-        </section>
+                </div>
 
-        <!-- Dashboard -->
+                <div class="line"></div>
 
-        <section class="dashboard">
+                <div class="step">
 
-            <!-- Left -->
+                    <span>☁</span>
 
-            <div class="info">
+                    <h4>AWS EC2</h4>
 
-                <h2>Deployment Details</h2>
+                </div>
 
-                <table>
+            </section>
 
-                    <tr>
+            <!-- Dashboard -->
 
-                        <td>Status</td>
+            <section class="dashboard">
 
-                        <td>{{ status }}</td>
+                <!-- Left -->
 
-                    </tr>
+                <div class="info">
 
-                    <tr>
+                    <h2>Deployment Details</h2>
 
-                        <td>Environment</td>
+                    <table>
 
-                        <td>{{ environment }}</td>
+                        <tr>
 
-                    </tr>
+                            <td>Status</td>
 
-                    <tr>
+                            <td>{{ status }}</td>
 
-                        <td>Version</td>
+                        </tr>
 
-                        <td>{{ version }}</td>
+                        <tr>
 
-                    </tr>
+                            <td>Environment</td>
 
-                    <tr>
+                            <td>{{ environment }}</td>
 
-                        <td>Deployment</td>
+                        </tr>
 
-                        <td>{{ deployment }}</td>
+                        <tr>
 
-                    </tr>
+                            <td>Version</td>
 
-                    <tr>
+                            <td>{{ version }}</td>
 
-                        <td>Docker Image</td>
+                        </tr>
 
-                        <td>{{ docker_image }}</td>
+                        <tr>
 
-                    </tr>
+                            <td>Deployment</td>
 
-                    <tr>
+                            <td>{{ deployment }}</td>
 
-                        <td>Repository</td>
+                        </tr>
 
-                        <td>{{ repository }}</td>
+                        <tr>
 
-                    </tr>
+                            <td>Docker Image</td>
 
-                    <tr>
+                            <td>{{ docker_image }}</td>
 
-                        <td>Region</td>
+                        </tr>
 
-                        <td>{{ region }}</td>
+                        <tr>
 
-                    </tr>
+                            <td>Repository</td>
 
-                    <tr>
+                            <td>{{ repository }}</td>
 
-                        <td>Hostname</td>
+                        </tr>
 
-                        <td>{{ hostname }}</td>
+                        <tr>
 
-                    </tr>
+                            <td>Region</td>
 
-                    <tr>
+                            <td>{{ region }}</td>
 
-                        <td>OS</td>
+                        </tr>
 
-                        <td>{{ os_name }}</td>
+                        <tr>
 
-                    </tr>
+                            <td>Hostname</td>
 
-                    <tr>
+                            <td>{{ hostname }}</td>
 
-                        <td>Python</td>
+                        </tr>
 
-                        <td>{{ python_version }}</td>
+                        <tr>
 
-                    </tr>
+                            <td>OS</td>
 
-                </table>
+                            <td>{{ os_name }}</td>
 
-            </div>
+                        </tr>
 
-            <!-- Right -->
+                        <tr>
 
-            <div class="timeline">
+                            <td>Python</td>
 
-                <h2>Deployment Timeline</h2>
+                            <td>{{ python_version }}</td>
 
-                <ul>
+                        </tr>
 
-                    <li>✅ Code Pushed</li>
+                    </table>
 
-                    <li>✅ GitHub Actions Started</li>
+                </div>
 
-                    <li>✅ Docker Image Built</li>
+                <!-- Right -->
 
-                    <li>✅ Docker Hub Updated</li>
+                <div class="timeline">
 
-                    <li>✅ EC2 Pulled Latest Image</li>
+                    <h2>Deployment Timeline</h2>
 
-                    <li>✅ Container Restarted</li>
+                    <ul>
 
-                    <li>✅ Deployment Successful</li>
+                        <li>✅ Code Pushed</li>
 
-                </ul>
+                        <li>✅ GitHub Actions Started</li>
 
-            </div>
+                        <li>✅ Docker Image Built</li>
 
-        </section>
+                        <li>✅ Docker Hub Updated</li>
 
-        <!-- Bottom Cards -->
+                        <li>✅ EC2 Pulled Latest Image</li>
 
-        <section class="stats">
+                        <li>✅ Container Restarted</li>
 
-            <div class="stat">
+                        <li>✅ Deployment Successful</li>
 
-                <h3>Docker Hub</h3>
+                    </ul>
 
-                <p>Connected</p>
+                </div>
 
-            </div>
+            </section>
 
-            <div class="stat">
+            <!-- Bottom Cards -->
 
-                <h3>GitHub Actions</h3>
+            <section class="stats">
 
-                <p>Healthy</p>
+                <div class="stat">
 
-            </div>
+                    <h3>Docker Hub</h3>
 
-            <div class="stat">
+                    <p>Connected</p>
 
-                <h3>AWS EC2</h3>
+                </div>
 
-                <p>Running</p>
+                <div class="stat">
 
-            </div>
+                    <h3>GitHub Actions</h3>
 
-            <div class="stat">
+                    <p>Healthy</p>
 
-                <h3>Deployment</h3>
+                </div>
 
-                <p>Successfull</p>
+                <div class="stat">
 
-            </div>
+                    <h3>AWS EC2</h3>
 
-        </section>
+                    <p>Running</p>
 
-    </main>
+                </div>
 
-</div>
+                <div class="stat">
+
+                    <h3>Deployment</h3>
+
+                    <p>Successfull</p>
+
+                </div>
+
+            </section>
+
+        </main>
+
+    </div>
 
 </body>
 
