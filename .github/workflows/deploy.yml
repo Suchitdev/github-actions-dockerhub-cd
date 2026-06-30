@@ -24,7 +24,9 @@ jobs:
       - name: Build Docker Image
         run: |
           docker build -t suchit10/github-actions-dockerhub-cd:latest .
+          docker build -t suchit10/github-actions-dockerhub-cd:${{ github.run_number }} .
 
       - name: Push Docker Image
         run: |
           docker push suchit10/github-actions-dockerhub-cd:latest
+          docker push suchit10/github-actions-dockerhub-cd:${{ github.run_number }}
