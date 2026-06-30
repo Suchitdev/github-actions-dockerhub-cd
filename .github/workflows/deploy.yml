@@ -30,3 +30,19 @@ jobs:
         run: |
           docker push suchit10/github-actions-dockerhub-cd:latest
           docker push suchit10/github-actions-dockerhub-cd:${{ github.run_number }}
+
+      - name: Deploy to EC2
+        uses: appleboy/ssh-action@v1.0.3
+        with:
+          host: ${{ secrets.EC2_HOST }}
+          username: ${{ secrets.EC2_USERNAME }}
+          key: ${{ secrets.EC2_SSH_KEY }}
+          script: |
+            docker pull suchit10/github-actions-dockerhub-cd:latest
+            docker stop github-actions-dockerhub-cd || true
+            docker rm github-actions-dockerhub-cd || true
+            docker run -d \
+              --name github-actions-dockerhub-cd \
+              -p 5000:5000 \
+              --restart always \
+              suchit10/github-actions-dockerhub-cd:latest
